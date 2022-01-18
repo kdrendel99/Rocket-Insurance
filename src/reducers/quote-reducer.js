@@ -22,6 +22,20 @@ export default (state = initialState, action) => {
             isLoading: false, 
             error: action.error
         })
+        case c.REQUEST_PUT_QUOTE:
+          return Object.assign({}, state, {
+            isLoading: true
+        });
+        case c.PUT_QUOTE_SUCCESS:
+          return Object.assign({}, state, {
+            isLoading: false,
+            quote: action.quote
+        });
+          case c.PUT_QUOTE_FAILURE:
+            return Object.assign({}, state, {
+              isLoading: false, 
+              error: action.error
+          })
       default:
         return state;
   }

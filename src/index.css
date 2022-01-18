@@ -2,21 +2,23 @@
 # General
 --------------------------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6, p, .font-primary{
+h1, h2, h3, h4, h5, h6, p, a, .font-primary{
   font-family: Circular,Helvetica,sans-serif;
 }
 
 body {
   color: #fff;
-  background-color: #1d1d1d!important;
+  background: rgb(242,244,247);
+  background: linear-gradient(137deg, rgba(242,244,247,1) 4%, rgba(215,225,240,1) 100%);
   margin-bottom: 600px;
   display: flex;
   flex-direction: column;
 }
 
+
 a {
-  color: #eb5d1e;
-  text-decoration: none;
+  color: #3b28cc;
+  text-decoration: none!important;
 }
 
 a:hover {
@@ -25,97 +27,33 @@ a:hover {
 }
 
 /*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-  background: #eb5d1e;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  transition: all 0.4s;
-}
-.back-to-top i {
-  font-size: 24px;
-  color: #fff;
-  line-height: 0;
-}
-.back-to-top:hover {
-  background: #ee7843;
-  color: #fff;
-}
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-/*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
-} */
-
-
-.home {
-  background: url("./images/smoke-clouds.png") repeat scroll center center/cover!important;
 }
 
 /*--------------------------------------------------------------
-# Hero Section - Generic
+# Hero Section
 --------------------------------------------------------------*/
 
-#hero h5, h6{
-  color: #4E4039;
-}
+/* .blob{
+  border: 5px solid red;
+} */
+
+/* .img.animated{
+  border: 5px solid blue;
+} */
+
 
 #hero {
   width: 100%;
-  height: 70vh;
-  /* background: #fef8f5; */
-  background: #1d1d1d;
-  border-bottom: 2px solid #fcebe3;
-  margin: 72px 0 -72px 0;
-}
-  
-  #hero .animated {
-    animation: up-down 2s ease-in-out infinite alternate-reverse both;
-    max-width: 300px;
-  }
-  @media (max-width: 991px) {
-    #hero {
-      height: calc(100vh - 72px);
-    }
-    #hero .animated {
-      -webkit-animation: none;
-      animation: none;
-    }
-    #hero .hero-img {
-      text-align: center;
-    }
-    #hero .hero-img img {
-      width: 50%;
-    }
-  }
-
-#hero h1 {
-  margin: 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  color: #4e4039;
-}
-#hero h2 {
-  color: #a08f86;
-  margin: 15px 0 0 0;
-  font-size: 24px;
+  height: 80vh;
+  background: #fff;
+  border-bottom: 2px solid #e0e9f7;
+  margin-bottom: -72px;
 }
 
 #hero .btn-get-started {
@@ -124,35 +62,41 @@ a:hover {
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 28px;
-  border-radius: 3px;
+  padding: 15px 40px;
   transition: 0.5s;
   margin-top: 30px;
   color: #fff;
-  background: #eb5d1e;
+  background: #5679fb;
 }
+
 #hero .btn-get-started:hover {
   background: #ef7f4d;
 }
-#hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-  max-height: 300px;
+
+#hero h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 79px;
+  color: #2f3358;
 }
-@media (max-width: 991px) {
-  #hero {
-    height: calc(100vh - 72px);
-  }
-  #hero .animated {
-    -webkit-animation: none;
-    animation: none;
-  }
-  #hero .hero-img {
-    text-align: center;
-  }
-  #hero .hero-img img {
-    width: 50%;
-  }
+#hero h2, h5, h6 {
+  color: #444359;
+  margin: 15px 0 0 0;
+  font-weight: 300;
 }
+
+#hero h2{
+  font-size: 22px;
+}
+#hero h5{
+  font-size: 18px;
+}
+#hero h6{
+  font-size: 16px;
+}
+
+
 @media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
@@ -176,6 +120,29 @@ a:hover {
     height: 120vh;
   }
 }
+  
+#hero .animated {
+  animation: up-down 3s ease-in-out infinite alternate-reverse both;
+  max-width: 300px;
+}
+@media (max-width: 991px) {
+  #hero {
+    height: calc(100vh - 72px);
+  }
+  #hero .animated {
+    -webkit-animation: none;
+    animation: none;
+  }
+  #hero .hero-img {
+    text-align: center;
+  }
+  #hero .hero-img img {
+    width: 50%;
+  }
+  #hero .wave{
+    bottom: 0px;
+  }
+}
 
 @-webkit-keyframes up-down {
   0% {
@@ -194,6 +161,7 @@ a:hover {
     transform: translateY(-10px);
   }
 }
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -203,7 +171,7 @@ section {
 }
 
 .section-bg {
-  background-color: #fef8f5;
+  background-color: #fff;
 }
 
 .section-title {
@@ -216,7 +184,7 @@ section {
   padding-bottom: 0;
   line-height: 1px;
   margin-bottom: 15px;
-  color: #c2b7b1;
+  color: #6895ff;
 }
 .section-title p {
   padding-bottom: 15px;
@@ -224,7 +192,7 @@ section {
   position: relative;
   font-size: 32px;
   font-weight: 700;
-  color: #4e4039;
+  color: #2667ff;
 }
 .section-title p::after {
   content: "";
@@ -232,51 +200,22 @@ section {
   display: block;
   width: 60px;
   height: 2px;
-  background: #eb5d1e;
+  background: #3b28cc;
   bottom: 0;
   left: calc(50% - 30px);
 }
 
 /*--------------------------------------------------------------
-# Breadcrumbs
+# Icon box
 --------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  /* background-color: #fef5f1; */
-  background-color: #1d1d1d;
-  min-height: 40px;
-}
-.breadcrumbs h2 {
-  font-size: 24px;
-  font-weight: 300;
-}
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #6c757d;
-  content: "/";
-}
-@media (max-width: 768px) {
-  .breadcrumbs .d-flex {
-    display: block !important;
-  }
-  .breadcrumbs ol {
-    display: block;
-  }
-  .breadcrumbs ol li {
-    display: inline-block;
-  }
+.icon-box{
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -285,13 +224,13 @@ section {
 .about h3 {
   font-weight: 700;
   font-size: 34px;
-  color: #4e4039;
+  color: #2667ff;
 }
 .about h4 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
-  color: #7a6960;
+  color: #6895ff;;
 }
 .about i {
   font-size: 48px;
@@ -302,6 +241,43 @@ section {
   font-size: 15px;
   color: #5a6570;
 }
+
+#about .icon-box{
+  padding: 20px;
+  margin: 0 0 15px 0;
+  border-bottom: 3px solid #fff;
+}
+#about .icon-box:hover {
+  transform: translateY(-5px);
+  border-color: #ef7f4d;
+}
+#about .icon-box {
+  height: 100%;
+  line-height: 1;
+  margin-bottom: 15px;
+  color: #6895ff;
+}
+#about .title {
+  font-weight: 700;
+  font-size: 18px;
+}
+#about .title a{
+  color: #111;
+}
+#about .description{
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 0;
+}
+
+.bi-star, .bi-star-fill{
+  display: inline-flex;
+  font-size: 18px!important;
+  color: #2667ff!important;
+  padding-bottom: 0px;
+  margin: 0px 2px 15px 2px;
+}
+
 @media (max-width: 991px) {
   .about .about-img img {
     max-width: 70%;
@@ -311,45 +287,6 @@ section {
   .about .about-img img {
     max-width: 90%;
   }
-}
-
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.services .icon-box {
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  margin: 0 0 40px 0;
-  background: #fff;
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-  transition: all 0.3s ease-in-out;
-  border-radius: 15px;
-  text-align: center;
-  border-bottom: 3px solid #fff;
-}
-.services .icon-box:hover {
-  transform: translateY(-5px);
-  border-color: #ef7f4d;
-}
-.services .icon i {
-  font-size: 48px;
-  line-height: 1;
-  margin-bottom: 15px;
-  color: #ef7f4d;
-}
-.services .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-.services .title a {
-  color: #111;
-}
-.services .description {
-  font-size: 15px;
-  line-height: 28px;
-  margin-bottom: 0;
 }
 
 @-webkit-keyframes animate-loading {

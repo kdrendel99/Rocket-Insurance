@@ -1,12 +1,36 @@
-#hero{
-  background: #fef8f5;
-  border-bottom: 2px solid #fcebe3;
+.astronaut{
+  background: url("./../../images/astronaut-blob.png") no-repeat scroll center center/contain!important;
 }
 
-#hero h1{
-  color: #4e4039;
+.wave {
+  margin-top: 70px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
-#hero h2{
-  color: #a08f86;
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+.wave .shape-fill {
+  fill: #fff;
+}
+
+.customers-info{
+  margin-top:-40px;
+  padding-top:0px;
+}
+
+.customers-info h3{
+  color: #2f3358;
+}
+
+.error{
+  color: red;
 }

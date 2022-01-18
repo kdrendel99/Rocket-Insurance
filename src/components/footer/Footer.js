@@ -40,22 +40,22 @@ function Footer(props){
               <div className="col-lg-3 col-md-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="/">About us</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="/">Services</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="/">Terms of service</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="/">Privacy policy</a></li>
                 </ul>
               </div>
 
               <div className="col-lg-3 col-md-6 footer-links">
                 <h4>Our Services</h4>
                 <ul>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Alien Security</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Space Navigation</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Asteroid Collision</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Exogorth Sy-O Protection</a></li>
-                  <li><i className="bx bx-chevron-right"></i> <a href="#">Han Solo Meet and Greet</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="https://www.wbur.org/onpoint/2017/08/10/protecting-earth-aliens">Alien Security</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="https://www.nasa.gov/">Space Navigation</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="/rating-info">Asteroid Collision</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="https://aeon.co/essays/what-can-we-do-to-save-the-universe-from-certain-death">Exogorth Sy-O Protection</a></li>
+                  <li><i className="bx bx-chevron-right"></i> <a href="https://media.giphy.com/media/3ornjSL2sBcPflIDiU/giphy.gif">Han Solo Meet and Greet</a></li>
                 </ul>
               </div>
 
@@ -63,11 +63,11 @@ function Footer(props){
                 <h4>Our Social Networks</h4>
                 <p>Connect with us to stay up to date on discounts, bundled insurance packages, and misc space stuff.</p>
                 <div className="social-links mt-3">
-                  <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-                  <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-                  <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                  <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                  <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                  <a href="/" className="twitter"><i className="bx bxl-twitter"></i></a>
+                  <a href="/" className="facebook"><i className="bx bxl-facebook"></i></a>
+                  <a href="/" className="instagram"><i className="bx bxl-instagram"></i></a>
+                  <a href="/" className="google-plus"><i className="bx bxl-skype"></i></a>
+                  <a href="/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
                 </div>
               </div>
 

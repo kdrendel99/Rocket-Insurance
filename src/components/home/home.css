@@ -1,0 +1,42 @@
+.home {
+  /* background: url("./images/smoke-clouds.png") repeat scroll center center/cover!important; */
+  /* background: url("./images/gradient.png") repeat scroll center center/cover!important; */
+  /* background: #4555df!important; */
+  margin-top: 72px;
+  background: #ffffff;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+
+.services .icon-box{
+  padding: 30px;
+  margin: 0 0 40px 0;
+  border-bottom: 3px solid #fff;
+}
+.services .icon-box:hover {
+  transform: translateY(-5px);
+  border-color: #ef7f4d;
+  cursor: pointer!important;
+}
+.services .icon i {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 15px;
+  color: #6895ff;
+}
+.services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.services .title a {
+  color: #111;
+}
+.services .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+  color: #212529;
+}

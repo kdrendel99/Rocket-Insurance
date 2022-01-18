@@ -1,107 +1,148 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { connect } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom'
-import { makeApiCall } from './../../actions/index'
+import { callPostRequest, callPutRequest } from './../../actions/index'
+import sitting from './../../images/sitting.png'
 
 
 function QuoteOverview(props){
+  const [premium, setPremium] = useState()
   const [deductibles, setDeductibles] = useState()
   const [asteroid, setAsteroid] = useState()
+  const [deductibleChanged, setDeductibleChanged] = useState()
+  const [asteroidChanged, setAsteroidChanged] = useState()
+
   useEffect(() => {
-    handleNewQuoteSubmission()
-  },[])
+    window.scrollTo(0, 0)
+  }, [])
+
+  const dedSelectionChanged = (event) => {
+    const currentSelection = event.target.value;
+    setDeductibleChanged(currentSelection)
+  }
+
+  const astSelectionChanged = (event) => {
+    const currentSelection = event.target.value;
+    setAsteroidChanged(currentSelection)
+  }
+
+  const createNewPutRequest = (currDed, currAst) => {
+    if (props.quote !== null){
+      const { dispatch } = props;
+      // console.log('props = ',props.quote)
+      const newPutRequest = {
+        quote: {
+          quoteId: props.quote.quoteId,
+          rating_address: props.quote.rating_address,
+          policy_holder: props.quote.policy_holder,
+          variable_selections: {
+            deductible: currDed,
+            asteroid_collision: currAst
+          }
+        }
+      }
+      dispatch(callPutRequest(newPutRequest))
+    }
+  }
+
+  useEffect(() => {
+    if (asteroid !== undefined){
+      createNewPutRequest(Number(deductibleChanged), asteroid[0])
+    }
+  },[deductibleChanged])
+
+  useEffect(() => {
+    if (deductibles !== undefined){
+      createNewPutRequest(deductibles[0], Number(asteroidChanged))
+    }
+  },[asteroidChanged])
+  
 
   useEffect(() => {
     if (props.quote !== null ){
+      console.log(props.quote)
+      // console.log('MY PREMIUM == ', props.quote.premium)
       setDeductibles(props.quote?.variable_options?.deductible?.values)
       setAsteroid(props.quote?.variable_options?.asteroid_collision?.values)
+      setPremium(props.quote?.premium)
     }
   },[props.quote])
 
-  const handleNewQuoteSubmission = () => {
-    const { dispatch } = props;
-    dispatch(makeApiCall('test'))
-  }
 
   return (
     <React.Fragment>
       <section id="hero" className="d-flex align-items-center">
+        <div className="container d-flex justify-content-center mt-0">
+          <div className="row d-flex justify-content-center">
 
-        <div className="container"style={{border:"5px solid green"}}>
-
-          <div className="d-flex justify-content-center">
-            <h1>Quote overview</h1>
-          </div>
-
-          <div className="row gy-4 py-3"style={{border:"5px solid blue"}}>
-
-            {/* <form> */}
-            <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1>Welcome, {props.quote?.policy_holder.first_name}!</h1>
+            <div className="d-flex justify-content-center">
+              <h2>Welcome, {props.quote?.policy_holder.first_name}!</h2>
             </div>
 
-            <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h5>Interested to learn more about our policy coverages?</h5>
-              <br/>
+            <div className="d-flex justify-content-center mb-2">
+              <h1>Quote overview</h1>
+            </div>
+
+            <div className="d-flex justify-content-center">
+              <h6>Interested in learning more about our policy coverages?</h6>
+            </div>
+            <div className="d-flex justify-content-center">
               <h6>You've come to the right place.</h6>
             </div>
 
-          </div>
-
-          <div className="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <div className="py-2">
-              <h5>Deductible</h5>
-              <select className="form-select" aria-label="Default select example">
-                <option defaultValue>{deductibles? [deductibles[0]] : 'loading...'}</option>
-                {deductibles?.map(value => (
-                <option value={value} key={value}>{value}</option>
-                ))}
-              </select>
+            <div className="d-flex justify-content-center mb-4">
+              <h2>My Annual Premium: ${premium}</h2>
             </div>
 
-            <div className="py-2">
-              <h5>Asteroid Collision Limit</h5>
-              <select className="form-select" aria-label="Default select example">
-                <option defaultValue>{asteroid? [asteroid[0]] : 'loading...'}</option>
-                {asteroid?.map(value => (
-                <option value={value} key={value}>{value}</option>
-                ))}
-              </select>
-            </div>
-          </div>
+            <div className="col-lg-8">
+              <div className="pt-2">
+                <h5 className="pb-2">Deductible</h5>
+                <select className="form-select" aria-label="Default select example" onChange={dedSelectionChanged} value={deductibleChanged}>
+                  <option defaultValue>{deductibles? [deductibles[0]] : 'loading...'}</option>
+                  {deductibles?.map(value => (
+                  <option value={value} key={value}>{value}</option>
+                  ))}
+                </select>
+              </div>
 
-          <button type="submit" className="btn btn-primary mt-4 w-100">Submit</button>
+              <div className="pt-2 pb-1">
+                <h5 className="pb-2">Asteroid Collision Limit</h5>
+                <select className="form-select" aria-label="Default select example" onChange={astSelectionChanged} value={asteroidChanged}>
+                  <option defaultValue>{asteroid? [asteroid[0]] : 'loading...'}</option>
+                  {asteroid?.map(value => (
+                  <option value={value} key={value}>{value}</option>
+                  ))}
+                </select>
+              </div>
+              <button type="submit" className="btn btn-primary mt-4 w-100">Submit</button>
+            </div>
+
+          </div>
         </div>
-
       </section>
-
-
-
-      {/* END OF HERO  */}
+    {/* END OF HERO  */}
 
       <main id="main">
         <section id="about" className="about">
           <div className="container">
             <div className="row justify-content-between">
               <div className="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                <img src="assets/img/about-img.svg" className="img-fluid" alt=""/>
+                <img src={sitting} className="img-fluid" alt=""/>
               </div>
               <div className="col-lg-6 pt-5 pt-lg-0">
-                <h3>Voluptatem dignissimos provident quasi</h3>
+                <h3>Like what you see?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                  If you're ready to get started saving with your new coverage, our 24-hour customer service team is just one click or call away! 
                 </p>
                 <div className="row">
                   <div className="col-md-6">
                     <i className="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4>Satisfaction guaranteed</h4>
+                    <p>We guarantee our sign up experience to surpass your standards, or your money back.</p>
                   </div>
                   <div className="col-md-6" >
                     <i className="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris nisi</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h4>Hassle-free cancellation</h4>
+                    <p>If for any reason you decide to cancel your policy, our team can help. No strings attached.</p>
                   </div>
                 </div>
               </div>
@@ -112,8 +153,6 @@ function QuoteOverview(props){
     </React.Fragment>
   );
 }
-
-QuoteOverview.propTypes = {};
 
 const mapStateToProps = state => {
   return {

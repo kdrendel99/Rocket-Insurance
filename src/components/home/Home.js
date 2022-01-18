@@ -1,72 +1,63 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { Link, useHistory } from 'react-router-dom'
+import React from "react";
+import { Link } from 'react-router-dom'
 import rocket from './../../images/rocket.png'
+import blob from './../../images/blob.png'
+import man from './../../images/man-phones.png'
+import './home.css'
 
-
-function Home(props){
-
+function Home(){
 
   return (
     <React.Fragment>
       <section id="hero" className="d-flex align-items-center home">
-
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1>Fly high - with confidence</h1>
-              {/* style={{color:"#7a59e4"}} */}
+              <h1>Fly higher - with confidence</h1>
               <h2>Keeping you insured to the moon and back.</h2>
               <div>
-                <a><Link to="/rating-info" className="btn-get-started">Get a quote</Link></a>
+                <a><Link to="/rating-info" className="btn-get-started rounded-pill">Get a quote</Link></a>
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img">
-              <div className="d-flex flex-row justify-content-center">
-                <img src={rocket} className="img animated" alt=""/>
+              <div className="d-flex flex-row justify-content-center align-items-center">
+              <img src={blob} className="blob" alt=""/>
+                <img src={rocket} className="img animated" style={{position:"absolute"}}alt=""/>
               </div>
             </div>
           </div>
         </div>
-
       </section>
-      {/* END OF HERO  */}
 
-      {/* MAIN SECTION  */}
       <main id="main">
-        <section id="about" className="about" >
+        <section id="about" className="about">
           <div className="container">
 
             <div className="row justify-content-between">
               <div className="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                <img src="assets/img/about-img.svg" className="img-fluid" alt=""/>
+                <img src={man} className="img-fluid" alt=""/>
               </div>
               <div className="col-lg-6 pt-5 pt-lg-0">
-                <h3>Voluptatem dignissimos provident quasi</h3>
+                <h3>Why Rocket Insurance?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                  We get it. Owning a rocket is no easy task. That's why we're universally renown for our exceptional coverage and policies.
                 </p>
                 <div className="row">
                   <div className="col-md-6">
                     <i className="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4>Broad coverage</h4>
+                    <p>Whether it be a fender-bender with NASA, or the inevitable heat death of the universe, we've got you covered.</p>
                   </div>
                   <div className="col-md-6" >
-                    <i className="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris nisi</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <i className="bx bx-receipt"></i>
+                    <h4>Cost Effective</h4>
+                    <p>We save our customers an average of nearly $900 a year through our exclusive rewards program.</p>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </section>
-
-        {/* END OF ABOUT SECTION  */}
-
-        {/* SERVICES SECTION  */}
 
         <section id="services" className="services section-bg">
           <div className="container">
@@ -75,34 +66,29 @@ function Home(props){
               <h2>Coverage</h2>
               <p>Rates you can rock-et out to</p>
             </div>
-
             <div className="row">
-              <div className="col-lg-6 d-flex align-items-stretch" >
-                <div className="icon-box">
-                  <div className="icon"><i className="bx bxl-dribbble"></i></div>
+              <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-stretch" >
+                <Link to="/rating-info" className="icon-box">
+                <div className="icon"><i className="fas fa-piggy-bank"></i></div>
                   <h4 className="title"><a href="">Deductible</a></h4>
-                  <p className="description">With rates as low as $500, you won't have to break the bank if an alien attacks.</p>
-                </div>
+                  <p className="description">With rates as low as $500, you won't have to break the bank when an alien attacks.</p>
+                </Link>
               </div>
-              <div className="col-lg-6 d-flex align-items-stretch" >
-                <div className="icon-box">
-                  <div className="icon"><i className="bx bxl-dribbble"></i></div>
+              <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-stretch" >
+                <Link to="/rating-info" className="icon-box">
+                  <div className="icon"><i className="fas fa-meteor"></i></div>
                   <h4 className="title"><a href="">Asteroid Collision Limit</a></h4>
-                  <p className="description">Up to one million dollars in coverage lets you fly more confidently.</p>
-                </div>
+                  <p className="description">We offer up to one million dollars in coverage, allowing you to fly more confidently.</p>
+                </Link>
               </div>
             </div>
 
           </div>
         </section>
       </main>
-
     </React.Fragment>
   );
 }
-
-Home.propTypes = {
-};
 
 export default Home;
 
