@@ -63,11 +63,14 @@ function Footer(props){
                 <h4>Our Social Networks</h4>
                 <p>Connect with us to stay up to date on discounts, bundled insurance packages, and misc space stuff.</p>
                 <div className="social-links mt-3">
-                  <a href="/" className="twitter"><i className="bx bxl-twitter"></i></a>
-                  <a href="/" className="facebook"><i className="bx bxl-facebook"></i></a>
-                  <a href="/" className="instagram"><i className="bx bxl-instagram"></i></a>
-                  <a href="/" className="google-plus"><i className="bx bxl-skype"></i></a>
-                  <a href="/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                  <a href="https://www.instagram.com/k.drendel/"><i className="bi bi-instagram"></i></a>
+                  <a href="https://twitter.com/karlsondrendel"><i className="bi bi-twitter"></i></a>
+                  <a href="https://www.linkedin.com/in/karlson-drendel/"><i className="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/kdrendel99"><i className="fab fa-github"></i></a>
+                </div>
+                <div className="credits pt-3">
+                  <medium>&copy; </medium>
+                  <small>Designed by Karlson Drendel</small>
                 </div>
               </div>
 
