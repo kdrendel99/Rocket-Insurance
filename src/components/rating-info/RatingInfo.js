@@ -56,6 +56,7 @@ function RatingInfo(props){
         if (typeof obj[key] === "object") {
             validate(obj[key]);   
         } 
+        else if (key == 'line_2') inputsValid[key] = 'is-valid'
         else if (isFieldLongerThanTwoChars(obj[key])) inputsValid[key] = 'is-valid'
         else inputsValid[key] = 'is-invalid'
         }
