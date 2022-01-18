@@ -15,7 +15,7 @@ function Footer(props){
             <div className="row justify-content-center">
               <div className="col-lg-6">
                 <h4>Join Our Newsletter</h4>
-                <p>Learn more about our comprehensive coverage and moon people services</p>
+                <p>Learn more about our comprehensive coverage and moon-people services</p>
                   <input type="email" name="email"/>
               </div>
             </div>

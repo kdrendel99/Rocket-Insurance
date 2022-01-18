@@ -95,11 +95,11 @@ function RatingInfo(props){
 
   return (
     <React.Fragment>
-      <section id="hero" className="d-flex align-items-center">
+      <section id="hero" className="d-flex align-items-center rating-info">
         <div className="container">
-          <div className="row gy-4">
-            <div className="col-lg-12 d-flex flex-row justify-content-center">
-              <h1 className="mt-0">Get a quote</h1>
+          <div className="row">
+            <div className="col-lg-12 d-flex flex-row justify-content-center mb-3">
+              <h1 className="rating-info-label">Get a Quote</h1>
             </div>
 
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
@@ -155,7 +155,7 @@ function RatingInfo(props){
     </div>
 
     <main id="main">
-      <section id="about" className="about customers-info">
+      <section id="about" className="customers-info">
           <div className="container">
 
             <div className="row justify-content-between">

@@ -11,21 +11,26 @@
 }
 
 #header {
-  /* background: #f2f4f7!important; */
   background: #ffffff;
-  /* display: none!important; */
 }
 
-#header .logo{
-  /* font-family: 'Roboto', sans-serif!important; */
-  font-weight: 400;
-  /* color: #ef7f4d!important; */
+#header .logo h1{
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif!important;
   font-size: 40px;
   color: #2f3358;
-  /* font-style: italic; */
 }
 
 
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: #7a6960;
+  text-decoration: none;
+}
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 75px!important;
+}
 
 #header .logo h1 {
   font-family: 'Roboto', sans-serif!important;
@@ -47,6 +52,10 @@
 
 #main {
   margin-top: 72px;
+}
+
+.house-icon{
+  display: none;
 }
 
 /*--------------------------------------------------------------

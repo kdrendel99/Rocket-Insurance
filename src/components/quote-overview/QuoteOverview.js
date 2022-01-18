@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 import { callPostRequest, callPutRequest } from './../../actions/index'
 import sitting from './../../images/sitting.png'
+import './quote-overview.css'
 
 
 function QuoteOverview(props){
@@ -28,7 +29,6 @@ function QuoteOverview(props){
   const createNewPutRequest = (currDed, currAst) => {
     if (props.quote !== null){
       const { dispatch } = props;
-      // console.log('props = ',props.quote)
       const newPutRequest = {
         quote: {
           quoteId: props.quote.quoteId,
@@ -59,8 +59,6 @@ function QuoteOverview(props){
 
   useEffect(() => {
     if (props.quote !== null ){
-      console.log(props.quote)
-      // console.log('MY PREMIUM == ', props.quote.premium)
       setDeductibles(props.quote?.variable_options?.deductible?.values)
       setAsteroid(props.quote?.variable_options?.asteroid_collision?.values)
       setPremium(props.quote?.premium)
@@ -70,27 +68,28 @@ function QuoteOverview(props){
 
   return (
     <React.Fragment>
-      <section id="hero" className="d-flex align-items-center">
-        <div className="container d-flex justify-content-center mt-0">
+      <section id="hero" className="quote-overview">
+        <div className="container">
           <div className="row d-flex justify-content-center">
 
-            <div className="d-flex justify-content-center">
-              <h2>Welcome, {props.quote?.policy_holder.first_name}!</h2>
-            </div>
+            <div className="col-lg-8">
+              <div className="d-flex justify-content-center text-center mt-3">
+                <h2>Welcome, {props.quote?.policy_holder.first_name}!</h2>
+              </div>
 
-            <div className="d-flex justify-content-center mb-2">
-              <h1>Quote overview</h1>
-            </div>
+              <div className="d-flex justify-content-center text-center">
+                <h1>Quote overview</h1>
+              </div>
 
-            <div className="d-flex justify-content-center">
-              <h6>Interested in learning more about our policy coverages?</h6>
-            </div>
-            <div className="d-flex justify-content-center">
-              <h6>You've come to the right place.</h6>
-            </div>
-
-            <div className="d-flex justify-content-center mb-4">
-              <h2>My Annual Premium: ${premium}</h2>
+              <div className="d-flex justify-content-center text-center mt-4 mb-2">
+                <h6>Interested in learning more about our policy coverages?</h6>
+              </div>
+              <div className="d-flex justify-content-center text-center mt-3">
+                <h6>You've come to the right place.</h6>
+              </div>
+              <div className="d-flex justify-content-center text-center mb-4">
+                <h2>My Annual Premium: ${premium}</h2>
+              </div>
             </div>
 
             <div className="col-lg-8">
@@ -122,7 +121,7 @@ function QuoteOverview(props){
     {/* END OF HERO  */}
 
       <main id="main">
-        <section id="about" className="about">
+        <section id="about">
           <div className="container">
             <div className="row justify-content-between">
               <div className="col-lg-5 d-flex align-items-center justify-content-center about-img">
@@ -131,7 +130,7 @@ function QuoteOverview(props){
               <div className="col-lg-6 pt-5 pt-lg-0">
                 <h3>Like what you see?</h3>
                 <p>
-                  If you're ready to get started saving with your new coverage, our 24-hour customer service team is just one click or call away! 
+                  If you're ready to start saving with your new coverage, our 24-hour customer service team is just one call or click away! 
                 </p>
                 <div className="row">
                   <div className="col-md-6">

@@ -13,8 +13,9 @@ function Home(){
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1>Fly higher - with confidence</h1>
-              <h2>Keeping you insured to the moon and back.</h2>
+              <h1>Fly Higher</h1>
+              <h2>With Confidence</h2>
+              <h3>Keeping you insured to the moon and back.</h3>
               <div>
                 <a><Link to="/rating-info" className="btn-get-started rounded-pill">Get a quote</Link></a>
               </div>
@@ -30,7 +31,7 @@ function Home(){
       </section>
 
       <main id="main">
-        <section id="about" className="about">
+        <section id="about">
           <div className="container">
 
             <div className="row justify-content-between">
@@ -59,7 +60,7 @@ function Home(){
           </div>
         </section>
 
-        <section id="services" className="services section-bg">
+        <section id="services" className="home-services section-bg">
           <div className="container">
 
             <div className="section-title">

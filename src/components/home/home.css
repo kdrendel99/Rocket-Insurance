@@ -1,42 +1,75 @@
 .home {
-  /* background: url("./images/smoke-clouds.png") repeat scroll center center/cover!important; */
-  /* background: url("./images/gradient.png") repeat scroll center center/cover!important; */
-  /* background: #4555df!important; */
   margin-top: 72px;
   background: #ffffff;
 }
+.home h1{
+  font-size: 80px!important;
+  line-height: 85px!important;
+}
 
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
+.home h2{
+  font-size: 40px!important; 
+  font-weight: 700!important;
+}
+.home h3{
+  font-weight:300;
+}
 
-.services .icon-box{
+.home-services .icon-box{
   padding: 30px;
   margin: 0 0 40px 0;
   border-bottom: 3px solid #fff;
 }
-.services .icon-box:hover {
+.home-services .icon-box:hover {
   transform: translateY(-5px);
   border-color: #ef7f4d;
   cursor: pointer!important;
 }
-.services .icon i {
+.home-services .icon i {
   font-size: 48px;
   line-height: 1;
   margin-bottom: 15px;
   color: #6895ff;
 }
-.services .title {
+.home-services .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
-.services .title a {
+.home-services .title a {
   color: #111;
 }
-.services .description {
+.home-services .description {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
   color: #212529;
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 15px 40px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #5679fb;
+}
+
+#hero .btn-get-started:hover {
+  background: #ef7f4d;
+}
+
+
+@media (max-width: 575px) {
+  .home h2{
+    margin-top: -10px!important;
+    font-size: 40px!important; 
+    margin-bottom: 0;
+    font-weight: 700!important;
+    line-height: 79px;
+  }
 }
